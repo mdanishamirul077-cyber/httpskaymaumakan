@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - KAY SCOFIELD</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 174, 255, .35), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(104, 66, 255, .3), transparent 35%),
+        linear-gradient(135deg, #020617, #061b3a, #050816);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 183, 255, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 183, 255, .04) 1px, transparent 1px);
+      background-size: 45px 45px;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      margin: auto;
+      padding: 25px 18px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 190, 255, .45);
+      border-radius: 28px;
+      background: rgba(3, 15, 35, .78);
+      backdrop-filter: blur(18px);
+      box-shadow:
+        0 0 35px rgba(0, 174, 255, .18),
+        inset 0 0 30px rgba(0, 174, 255, .04);
+      padding: 28px 20px;
+    }
+
+    .glow {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #00bfff;
+      filter: blur(100px);
+      opacity: .15;
+      top: -80px;
+      right: -80px;
+    }
+
+    .profile {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar {
+      width: 115px;
+      height: 115px;
+      margin: auto;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #00c8ff, #5965ff, #00c8ff);
+      box-shadow:
+        0 0 25px rgba(0, 195, 255, .6),
+        0 0 60px rgba(67, 86, 255, .25);
+      animation: pulse 3s infinite;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #071426;
+    }
+
+    @keyframes pulse {
+      50% {
+        box-shadow:
+          0 0 40px rgba(0, 195, 255, .9),
+          0 0 80px rgba(67, 86, 255, .35);
+      }
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: 29px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #00bfff;
+    }
+
+    .subtitle {
+      margin-top: 7px;
+      color: #9fdfff;
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 15px;
+      padding: 7px 14px;
+      border-radius: 50px;
+      background: rgba(0, 220, 255, .08);
+      border: 1px solid rgba(0, 220, 255, .3);
+      color: #65e8ff;
+      font-size: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #00ffb3;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ffb3;
+    }
+
+    .section-title {
+      margin: 30px 0 12px;
+      font-size: 14px;
+      color: #8edfff;
+      letter-spacing: 1px;
+    }
+
+    .payment {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.09);
+      transition: .25s;
+    }
+
+    .payment:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 204, 255, .55);
+      box-shadow: 0 8px 25px rgba(0, 174, 255, .12);
+    }
+
+    .payment-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0c8fff, #654cff);
+      font-size: 21px;
+      box-shadow: 0 0 18px rgba(0, 153, 255, .3);
+    }
+
+    .payment-info {
+      flex: 1;
+    }
+
+    .payment-info strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
